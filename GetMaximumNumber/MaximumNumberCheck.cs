@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GetMaximumNumber
 {
-    class MaximumNumberCheck
+    public class MaximumNumberCheck
     {
         public static int MaximumIntegerNumber(int num1, int num2, int num3)
         {
