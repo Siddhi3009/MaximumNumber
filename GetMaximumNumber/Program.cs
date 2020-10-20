@@ -8,12 +8,14 @@ namespace GetMaximumNumber
         {
             Console.WriteLine("Welcome to Get Maximum Number Program");
             Console.WriteLine("Enter values to be compared");
-            MaximumNumberCheck.MaximumCheck<int>(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+            int output1 = MaximumNumberCheck.MaximumCheck<int>(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+            Console.WriteLine("Maximum value: " + output1);
             Console.WriteLine("Enter values to be compared");
-            MaximumNumberCheck.MaximumCheck<float>(float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()));
+            float output2 = MaximumNumberCheck.MaximumCheck<float>(float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()));
+            Console.WriteLine("Maximum value: " + output2);
             Console.WriteLine("Enter values to be compared");
-            MaximumNumberCheck.MaximumCheck<string>(Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
-
+            string output3 = MaximumNumberCheck.MaximumCheck<string>(Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
+            Console.WriteLine("Maximum value: " + output3);
             
             //Console.WriteLine("Enter integer Numbers");
             //int output1 = MaximumNumberCheck.MaximumIntegerNumber(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));

@@ -25,7 +25,7 @@ namespace GetMaximumNumber
                 else
                     throw new Exception("firstNumber,secondNumber and thirdNumber are same");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
                 return -1;
@@ -81,32 +81,22 @@ namespace GetMaximumNumber
                 return "";
             }
         }
-        public static void MaximumCheck<T>(T num1, T num2, T num3) where T : IComparable
+        public static T MaximumCheck<T>(T num1, T num2, T num3) where T : IComparable
         {
-            try
+            if ((num1.CompareTo(num2) > 0 && num1.CompareTo(num3) > 0) || (num1.CompareTo(num2) >= 0 && num1.CompareTo(num3) > 0) || (num1.CompareTo(num2) > 0 && num1.CompareTo(num3) >= 0))
             {
-                if ((num1.CompareTo(num2) > 0 && num1.CompareTo(num3) > 0) || (num1.CompareTo(num2) >= 0 && num1.CompareTo(num3) > 0) || (num1.CompareTo(num2) > 0 && num1.CompareTo(num3) >= 0))
-                {
-                    Console.WriteLine("Maximum value: " + num1);
-                    return;
-                }
-                if ((num2.CompareTo(num1) > 0 && num2.CompareTo(num3) > 0) || (num2.CompareTo(num1) >= 0 && num2.CompareTo(num3) > 0) || (num2.CompareTo(num1) > 0 && num2.CompareTo(num3) >= 0))
-                {
-                    Console.WriteLine("Maximum value: " + num2);
-                    return;
-                }
-                if ((num3.CompareTo(num2) > 0 && num3.CompareTo(num1) > 0) || (num3.CompareTo(num2) >= 0 && num3.CompareTo(num1) > 0) || (num3.CompareTo(num2) > 0 && num3.CompareTo(num1) >= 0))
-                {
-                    Console.WriteLine("Maximum value: " + num3);
-                    return;
-                }
-                else
-                    throw new Exception("first value,second value and third value are same");
+                return num1;
             }
-            catch (Exception e)
+            if ((num2.CompareTo(num1) > 0 && num2.CompareTo(num3) > 0) || (num2.CompareTo(num1) >= 0 && num2.CompareTo(num3) > 0) || (num2.CompareTo(num1) > 0 && num2.CompareTo(num3) >= 0))
             {
-                Console.WriteLine(e.Message);
+                return num2;
             }
+            if ((num3.CompareTo(num2) > 0 && num3.CompareTo(num1) > 0) || (num3.CompareTo(num2) >= 0 && num3.CompareTo(num1) > 0) || (num3.CompareTo(num2) > 0 && num3.CompareTo(num1) >= 0))
+            {
+                return num3;
+            }
+
+            throw new Exception("first value,second value and third value are same");
         }
 
     }
