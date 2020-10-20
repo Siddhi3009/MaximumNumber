@@ -125,6 +125,40 @@ namespace MaximumNumberTest
             float actual = MaximumNumberCheck.MaximumCheck<float>(num1, num2, num3);
             Assert.AreEqual(expected, actual);
         }
+        [TestMethod]
+        [DataRow("9", "14", "8")]
+        [DataRow("99", "65", "74")]
+
+        public void GivenMaxValueAtFirstPlace_WhenCheckedInGenericMaximumCheck_ShouldReturnFirstValue(string num1, string num2, string num3)
+        {
+            string expected = num1;
+            GenericMaximumCheck<string> generic = new GenericMaximumCheck<string>(num1, num2, num3);
+            string actual = generic.MaximumCheck();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [DataRow(9, 14, 8)]
+        [DataRow(65, 99, 74)]
+
+        public void GivenMaxValueAtSecondPlace_WhenCheckedInGenericMaximumCheck_ShouldReturnSecondValue(int num1, int num2, int num3)
+        {
+            int expected = num2;
+            GenericMaximumCheck<int> generic = new GenericMaximumCheck<int>(num1, num2, num3);
+            int actual = generic.MaximumCheck();
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [DataRow(14.23F, 8.36F, 99.99F)]
+        [DataRow(65.36F, 9.56F, 74.56F)]
+
+        public void GivenMaxValueAtThirdPlace_WhenCheckedInGenericMaximumCheck_ShouldReturnThirdValue(float num1, float num2, float num3)
+        {
+            float expected = num3;
+            GenericMaximumCheck<float> generic = new GenericMaximumCheck<float>(num1, num2, num3);
+            float actual = generic.MaximumCheck();
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 
 }
