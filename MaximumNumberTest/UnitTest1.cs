@@ -1,5 +1,5 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using GetMaximumNumber;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MaximumNumberTest
 {
     [TestClass]
@@ -63,6 +63,36 @@ namespace MaximumNumberTest
         {
             float expected = num1;
             float actual = MaximumNumberCheck.MaximumFloatNumber(num1, num2, num3);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [DataRow("9", "14", "8")]
+        [DataRow("99", "65", "74")]
+
+        public void GivenMaxValueAtFirstPlace_WhenCheckedInMaximumString_ShouldReturnFirstNumber(string num1, string num2, string num3)
+        {
+            string expected = num1;
+            string actual = MaximumNumberCheck.MaximumString(num1, num2, num3);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [DataRow("14", "9", "8")]
+        [DataRow("65", "99", "74")]
+
+        public void GivenMaxValueAtSecondPlace_WhenCheckedInMaximumString_ShouldReturnSecondNumber(string num1, string num2, string num3)
+        {
+            string expected = num2;
+            string actual = MaximumNumberCheck.MaximumString(num1, num2, num3);
+            Assert.AreEqual(expected, actual);
+        }
+        [TestMethod]
+        [DataRow("14", "8", "99")]
+        [DataRow("65", "74", "9")]
+
+        public void GivenMaxValueAtThirdPlace_WhenCheckedInMaximumString_ShouldReturnThirdNumber(string string1, string string2, string string3)
+        {
+            string expected = string3;
+            string actual = MaximumNumberCheck.MaximumString(string1, string2, string3);
             Assert.AreEqual(expected, actual);
         }
     }
