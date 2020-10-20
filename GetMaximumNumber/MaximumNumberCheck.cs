@@ -56,5 +56,30 @@ namespace GetMaximumNumber
                 return -1;
             }
         }
+        public static string MaximumString(string string1, string string2, string string3)
+        {
+            try
+            {
+                if ((string1.CompareTo(string2) > 0 && string1.CompareTo(string3) > 0) || (string1.CompareTo(string2) >= 0 && string1.CompareTo(string3) > 0) || (string1.CompareTo(string2) > 0 && string1.CompareTo(string3) >= 0))
+                {
+                    return string1;
+                }
+                if ((string2.CompareTo(string1) > 0 && string2.CompareTo(string3) > 0) || (string2.CompareTo(string1) >= 0 && string2.CompareTo(string3) > 0) || (string2.CompareTo(string1) > 0 && string2.CompareTo(string3) >= 0))
+                {
+                    return string2;
+                }
+                if ((string3.CompareTo(string2) > 0 && string3.CompareTo(string1) > 0) || (string3.CompareTo(string2) >= 0 && string3.CompareTo(string1) > 0) || (string3.CompareTo(string2) > 0 && string3.CompareTo(string1) >= 0))
+                {
+                    return string3;
+                }
+                else
+                    throw new Exception("firstNumber,secondNumber and thirdNumber are same");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return "";
+            }
+        }
     }
 }
