@@ -9,14 +9,14 @@ namespace GetMaximumNumber
             //Generic Class
 
             Console.WriteLine("Welcome to Get Maximum Number Program");
-            Console.WriteLine("Enter values to be compared");
-            GenericMaximumCheck<int> genericInt = new GenericMaximumCheck<int>(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+            int[] intArray = { 56, 7, 89, 98, 3 };
+            GenericMaximumCheck<int> genericInt = new GenericMaximumCheck<int>(intArray);
             genericInt.PrintMaxValue();
-            Console.WriteLine("Enter values to be compared");
-            GenericMaximumCheck<float> genericFloat = new GenericMaximumCheck<float>(float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()), float.Parse(Console.ReadLine()));
+            float[] floatArray = { 6.5F, 85.65F, 94.65F, 3.98F};
+            GenericMaximumCheck<float> genericFloat = new GenericMaximumCheck<float>(floatArray);
             genericFloat.PrintMaxValue();
-            Console.WriteLine("Enter values to be compared");
-            GenericMaximumCheck<string> genericString = new GenericMaximumCheck<string>(Console.ReadLine(), Console.ReadLine(), Console.ReadLine());
+            string[] stringArray = {"Apple", "Peach", "Banana", "Mango", "papaya" };
+            GenericMaximumCheck<string> genericString = new GenericMaximumCheck<string>(stringArray);
             genericString.PrintMaxValue();
 
             //GenericMethod
